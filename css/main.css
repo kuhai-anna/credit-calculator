@@ -55,10 +55,26 @@ button {
   font-display: swap;
   font-style: normal;
 }
+html {
+  box-sizing: border-box;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
+  margin: 0;
   font-family: "Montserrat", "sans-serif";
   font-size: 14px;
   letter-spacing: 0.03em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .section {
