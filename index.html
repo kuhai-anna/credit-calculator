@@ -26,5 +26,75 @@
 				>
 			</div>
 		</header>
+		<main>
+			<section class="section">
+				<h1 class="visually-hidden">Кредитний калькулятор</h1>
+				<div class="container">
+					<form class="form">
+						<div class="form__field">
+							<label class="form__label" for="creditAmount">
+								<span class="form__label-text">Сума кредиту</span>
+							</label>
+							<input
+								type="range"
+								min="1000"
+								max="50000"
+								step="100"
+								value="1000"
+								id="creditRange"
+								oninput="creditAmount.value = creditRange.value"
+							/>
+							<input
+								type="number"
+								min="1000"
+								max="50000"
+								step="100"
+								value="1000"
+								id="creditAmount"
+								oninput="creditRange.value = creditAmount.value"
+								required
+							/>
+						</div>
+						<div class="form__field">
+							<label class="form__label" for="daysAmount">
+								<span class="form__label-text">Період погашення (днів)</span>
+							</label>
+							<input
+								type="range"
+								min="7"
+								max="60"
+								step="1"
+								value="7"
+								id="daysRange"
+								oninput="daysAmount.value = daysRange.value"
+							/>
+							<input
+								type="number"
+								min="7"
+								max="60"
+								step="1"
+								value="7"
+								id="daysAmount"
+								oninput="daysRange.value = daysAmount.value"
+								required
+							/>
+						</div>
+						<div class="form__field">
+							<label class="form__label" for="dailyRepaymentAmount">
+								<span class="form__label-text">Денна сума погашення</span>
+							</label>
+							<input type="number" id="dailyRepaymentAmount" disabled />
+						</div>
+						<div class="form__field">
+							<label class="form__label" for="totalRepaymentAmount">
+								<span class="form__label-text">Загальна сума погашення</span>
+							</label>
+							<input type="number" id="totalRepaymentAmount" disabled />
+						</div>
+						<button class="submit-btn form__submit" type="submit">Отримати кредит</button>
+					</form>
+				</div>
+			</section>
+		</main>
 	</body>
 </html>
