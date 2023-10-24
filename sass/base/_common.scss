@@ -1,6 +1,22 @@
+html {
+	box-sizing: border-box;
+	width: 100vw;
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
 body {
+	margin: 0;
 	font-family: $montserrat-font;
 	@include font(null, 14px, null, 0.03em);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .section {
