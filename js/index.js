@@ -61,7 +61,7 @@ function creditCalculation(e) {
 function onSubmitBtnClick(e) {
 	e.preventDefault();
 
-	Notiflix.Notify.Success('Запит на оформлення кредиту відправлено.');
+	Notiflix.Notify.Success('Запит на оформлення кредиту відправлено.', notiflixOptions);
 
 	this.reset();
 }
