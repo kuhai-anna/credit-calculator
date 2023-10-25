@@ -32,11 +32,6 @@
 	&:focus {
 		transform: scale(1.05);
 	}
-
-	&:hover .logo__icon,
-	&:focus .logo__icon {
-		transform: scale(1.05);
-	}
 }
 
 .logo__icon {
