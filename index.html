@@ -17,12 +17,12 @@
 	</head>
 	<body>
 		<header class="header">
-			<div class="container">
+			<div class="container header__container">
 				<a class="link logo" href="./index.html">
-					<svg class="logo__icon" aria-label="Calculator" width="40" height="40">
+					<svg class="logo__icon" aria-label="Calculator" width="32" height="32">
 						<use href="./assets/icons/sprite.svg#calculator"></use>
 					</svg>
-					<span>Кредитний калькулятор</span></a
+					<span class="logo__text">Кредитний калькулятор</span></a
 				>
 			</div>
 		</header>
@@ -31,74 +31,100 @@
 				<h1 class="visually-hidden">Кредитний калькулятор</h1>
 				<div class="container">
 					<form class="form">
-						<div class="form__field">
-							<label class="form__label" for="creditAmount">
-								<span class="form__label-text">Сума кредиту</span>
-							</label>
-							<input
-								type="range"
-								min="1000"
-								max="50000"
-								step="100"
-								value="1000"
-								id="creditRange"
-								oninput="creditAmount.value = creditRange.value"
-							/>
-							<input
-								type="number"
-								min="1000"
-								max="50000"
-								step="100"
-								value="1000"
-								id="creditAmount"
-								oninput="creditRange.value = creditAmount.value"
-								required
-							/>
+						<div class="form__wrap">
+							<div class="field-wrap">
+								<div class="form__field">
+									<label class="form__label" for="creditAmount">
+										<span class="form__label-text">Сума кредиту, грн</span>
+									</label>
+
+									<input
+										class="form__input credit-amount"
+										type="number"
+										min="1000"
+										max="50000"
+										step="100"
+										placeholder="1000"
+										id="creditAmount"
+										oninput="creditRange.value = creditAmount.value"
+										required
+									/>
+								</div>
+								<input
+									class="credit-range"
+									type="range"
+									min="1000"
+									max="50000"
+									step="100"
+									value="1000"
+									id="creditRange"
+									oninput="creditAmount.value = creditRange.value"
+								/>
+
+								<div class="form__field">
+									<label class="form__label" for="daysAmount">
+										<span class="form__label-text">Період погашення, днів</span>
+									</label>
+									<input
+										class="form__input days-amount"
+										type="number"
+										min="7"
+										max="60"
+										step="1"
+										placeholder="7"
+										id="daysAmount"
+										oninput="daysRange.value = daysAmount.value"
+										required
+									/>
+								</div>
+								<input
+									class="days-range"
+									type="range"
+									min="7"
+									max="60"
+									step="1"
+									value="7"
+									id="daysRange"
+									oninput="daysAmount.value = daysRange.value"
+								/>
+							</div>
+
+							<div class="field-wrap">
+								<div class="form__field repayment-field">
+									<label class="form__label" for="dailyRepayment">
+										<span class="form__label-text">Денна сума погашення</span>
+									</label>
+									<input
+										class="form__input daily-repayment"
+										type="number"
+										id="dailyRepayment"
+										placeholder="0,00"
+										readonly
+									/>
+								</div>
+								<div class="form__field repayment-field">
+									<label class="form__label" for="totalRepayment">
+										<span class="form__label-text">Загальна сума погашення</span>
+									</label>
+									<input
+										class="form__input total-repayment"
+										type="number"
+										id="totalRepayment"
+										placeholder="0,00"
+										readonly
+									/>
+								</div>
+							</div>
 						</div>
-						<div class="form__field">
-							<label class="form__label" for="daysAmount">
-								<span class="form__label-text">Період погашення (днів)</span>
-							</label>
-							<input
-								type="range"
-								min="7"
-								max="60"
-								step="1"
-								value="7"
-								id="daysRange"
-								oninput="daysAmount.value = daysRange.value"
-							/>
-							<input
-								type="number"
-								min="7"
-								max="60"
-								step="1"
-								value="7"
-								id="daysAmount"
-								oninput="daysRange.value = daysAmount.value"
-								required
-							/>
-						</div>
-						<div class="form__field">
-							<label class="form__label" for="dailyRepayment">
-								<span class="form__label-text">Денна сума погашення</span>
-							</label>
-							<input type="number" id="dailyRepayment" readonly />
-						</div>
-						<div class="form__field">
-							<label class="form__label" for="totalRepayment">
-								<span class="form__label-text">Загальна сума погашення</span>
-							</label>
-							<input type="number" id="totalRepayment" readonly />
-						</div>
-						<button class="submit-btn form__submit" type="submit">Отримати кредит</button>
+
+						<button class="form__submit-btn" type="submit">Отримати кредит</button>
 					</form>
 				</div>
 			</section>
 		</main>
 		<footer class="footer">
-			<div class="container">
-				<p className="{css.footerText}">&copy; 2023 | Developed by Anna Kuhai</p>
+			<div class="container footer-container">
+				<p class="footer__text">&copy; 2023 | Developed by Anna Kuhai</p>
 				<a
 					class="link footer__link"
 					href="https://github.com/kuhai-anna"
@@ -124,7 +150,7 @@
 			</div>
 		</footer>
 
-		<script src="dist/notiflix-notify-aio-3.2.6.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/notiflix@2.7.0/dist/notiflix-aio-2.7.0.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
 		<script type="module" src="./js/index.js"></script>
 	</body>
