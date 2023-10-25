@@ -1,0 +1,59 @@
+.header {
+	padding: 16px 0px;
+
+	border-bottom: 2px solid $border-color;
+}
+
+.header__container {
+	display: flex;
+}
+
+.logo {
+	display: flex;
+	align-items: flex-end;
+
+	@include font(700, 16px, null, null);
+	color: $main-text-color;
+	fill: $secondary-text-color;
+
+	transform: scale(1);
+	transition-property: transform;
+	@extend %transition;
+
+	@include tablet {
+		@include font(null, 20px, null, null);
+	}
+
+	@include desktop {
+		@include font(null, 22px, null, null);
+	}
+
+	&:hover,
+	&:focus {
+		transform: scale(1.05);
+	}
+
+	&:hover .logo__icon,
+	&:focus .logo__icon {
+		transform: scale(1.05);
+	}
+}
+
+.logo__icon {
+	transition-property: fill;
+	@extend %transition;
+
+	@include tablet {
+		width: 36px;
+		height: 36px;
+	}
+
+	@include desktop {
+		width: 38px;
+		height: 38px;
+	}
+}
+
+.logo__text {
+	display: block;
+}
