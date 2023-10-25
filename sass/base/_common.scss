@@ -12,11 +12,18 @@ html {
 }
 
 body {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
 	margin: 0;
 	font-family: $montserrat-font;
 	@include font(null, 14px, null, 0.03em);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+main {
+	flex: 1;
 }
 
 .section {
