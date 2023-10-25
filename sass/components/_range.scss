@@ -1,0 +1,52 @@
+input[type='range'] {
+	@include appearance(none);
+	width: 100%;
+	margin: 0;
+	height: 14px;
+
+	border: 1px solid $accent-bgd-color;
+	border-radius: 10px;
+	outline: none;
+	cursor: pointer;
+
+	transition-property: background-color;
+	@extend %transition;
+
+	@include desktop {
+		height: 16px;
+	}
+}
+
+input[type='range']:hover,
+input[type='range']:focus {
+	background-color: $range-hover-color;
+}
+
+input[type='range']::-webkit-slider-thumb {
+	@include appearance(none);
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	border: 4px solid $accent-bgd-color;
+	background-color: transparent;
+	cursor: pointer;
+
+	@include desktop {
+		width: 14px;
+		height: 14px;
+	}
+}
+
+input[type='range']::-moz-range-thumb {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	border: 4px solid $accent-bgd-color;
+	background-color: transparent;
+	cursor: pointer;
+
+	@include desktop {
+		width: 14px;
+		height: 14px;
+	}
+}
