@@ -3,10 +3,12 @@ const INTEREST_RATE = 2.2;
 
 // Notification settings
 export const notiflixOptions = {
-	width: '330px',
-	fontSize: '14px',
+	width: '340px',
+	fontFamily: 'Montserrat',
+	fontSize: '16px',
 	position: 'right-top',
 	timeout: 2000,
+	cssAnimationStyle: 'from-right',
 };
 
 // Links to items
@@ -36,7 +38,7 @@ function creditCalculation(e) {
 		refs.form.lastElementChild.disabled = true;
 
 		Notiflix.Notify.Failure(
-			'Помилка! Сума кредиту має бути в межах від 1 000 грн до 50 000 грн.',
+			'Сума кредиту має бути в межах від 1 000 грн до 50 000 грн.',
 			notiflixOptions
 		);
 	} else if (days === 0 || days < 7 || days > 60) {
@@ -45,7 +47,7 @@ function creditCalculation(e) {
 		refs.totalRepaymentOutput.value = '';
 		refs.form.lastElementChild.disabled = true;
 
-		Notiflix.Notify.Failure('Помилка! Період погашення має бути в межах від 7 до 60 днів.');
+		Notiflix.Notify.Failure('Період погашення має бути в межах від 7 до 60 днів.', notiflixOptions);
 	} else {
 		dailyRepayment = (credit + credit * (INTEREST_RATE / 100) * days) / days;
 		totalRepayment = dailyRepayment * days;
