@@ -1,0 +1,43 @@
+.footer {
+	flex-shrink: 0;
+	padding: 16px 0px;
+
+	border-top: 2px solid $border-color;
+}
+
+.footer-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+}
+
+.footer__text {
+	@include font(500, null, null, null);
+
+	@include tablet {
+		@include font(null, 16px, null, null);
+	}
+}
+
+.footer__link {
+	display: flex;
+	align-items: center;
+
+	fill: $secondary-text-color;
+
+	&:hover .soc-icon,
+	&:focus .soc-icon {
+		fill: $accent-text-color;
+	}
+}
+
+.soc-icon {
+	transition-property: fill;
+	@extend %transition;
+
+	@include tablet {
+		width: 24px;
+		height: 24px;
+	}
+}
