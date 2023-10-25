@@ -8,3 +8,21 @@
 @mixin calc($count) {
 	flex-basis: calc((100% - 30px * ($count - 1)) / $count);
 }
+
+@mixin mobile {
+	@media screen and (min-width: 414px) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media screen and (min-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media screen and (min-width: 1280px) {
+		@content;
+	}
+}
