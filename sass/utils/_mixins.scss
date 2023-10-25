@@ -10,13 +10,13 @@
 }
 
 @mixin mobile {
-	@media screen and (min-width: 414px) {
+	@media screen and (min-width: 375px) {
 		@content;
 	}
 }
 
 @mixin tablet {
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 768px) {
 		@content;
 	}
 }
@@ -25,4 +25,11 @@
 	@media screen and (min-width: 1280px) {
 		@content;
 	}
+}
+
+@mixin appearance($value) {
+	-webkit-appearance: $value;
+	-moz-appearance: $value;
+	-o-appearance: $value;
+	appearance: $value;
 }
