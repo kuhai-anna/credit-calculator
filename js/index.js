@@ -63,5 +63,7 @@ function onSubmitBtnClick(e) {
 
 	Notiflix.Notify.Success('Запит на оформлення кредиту відправлено.', notiflixOptions);
 
+	refs.form.lastElementChild.disabled = true;
+
 	this.reset();
 }
