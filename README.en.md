@@ -2,9 +2,10 @@
 
 ## Project Description
 
-The project is created to implement a credit calculator that allows users to calculate the daily and
-total repayment amounts of a loan. The calculator computes the repayment amount based on the entered
-loan amount and repayment period.
+The project is created to implement
+[a credit calculator](https://kuhai-anna.github.io/credit-calculator/) that allows users to
+calculate the daily and total repayment amounts of a loan. The calculator computes the repayment
+amount based on the entered loan amount and repayment period.
 
 ![Design visualization](./assets/image/design.jpeg)
 
