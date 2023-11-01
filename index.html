@@ -33,13 +33,14 @@
 					<form class="form">
 						<div class="form__wrap">
 							<div class="field-wrap">
+								<div id="credit-error" class="error-message credit-error"></div>
 								<div class="form__field">
 									<label for="creditAmount">
 										<span class="form__label-text">Сума кредиту, грн</span>
 									</label>
 
 									<input
-										class="form__input"
+										class="form__input credit-input"
 										type="number"
 										min="1000"
 										max="50000"
@@ -61,12 +62,13 @@
 								/>
 								<div class="range-text"><span>1 000</span><span>50 000</span></div>
 
+								<div id="days-error" class="error-message days-error"></div>
 								<div class="form__field">
 									<label for="daysAmount">
 										<span class="form__label-text">Період погашення, днів</span>
 									</label>
 									<input
-										class="form__input"
+										class="form__input days-input"
 										type="number"
 										min="7"
 										max="60"
