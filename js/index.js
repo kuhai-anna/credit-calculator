@@ -30,63 +30,59 @@ refs.form.addEventListener('submit', onSubmitBtnClick);
 function creditCalculation() {
 	const credit = Number(refs.creditAmountInput.value);
 	const days = Number(refs.daysAmountInput.value);
-	let dailyRepayment;
-	let totalRepayment;
 
-	let isCreditValid = true;
-	let isDaysValid = true;
+	const isCreditValid = validateCreditInput(credit);
+	const isDaysValid = validateDaysInput(days);
 
+	if (!isCreditValid || !isDaysValid) {
+		refs.dailyRepaymentOutput.value = '';
+		refs.totalRepaymentOutput.value = '';
+		refs.form.lastElementChild.disabled = true;
+
+		return;
+	}
+
+	const dailyRepayment = (credit + credit * (INTEREST_RATE / 100) * days) / days;
+	const totalRepayment = dailyRepayment * days;
+
+	refs.form.lastElementChild.disabled = false;
+	refs.dailyRepaymentOutput.value = dailyRepayment.toFixed(2);
+	refs.totalRepaymentOutput.value = totalRepayment.toFixed(2);
+}
+
+function validateCreditInput(credit) {
 	if (!credit || credit === 0) {
 		refs.creditAmountInput.previousElementSibling.value = 1000;
 		refs.errorCreditMessage.textContent = 'Введіть суму кредиту.';
 
-		isCreditValid = false;
+		return false;
 	} else if (credit < 1000 || credit > 50000) {
 		refs.creditAmountInput.previousElementSibling.value = 1000;
 		refs.errorCreditMessage.textContent =
 			'Сума кредиту має бути в межах від 1 000 грн до 50 000 грн.';
 
-		isCreditValid = false;
+		return false;
 	}
 
+	refs.errorCreditMessage.textContent = '';
+	return true;
+}
+
+function validateDaysInput(days) {
 	if (!days || days === 0) {
 		refs.daysAmountInput.previousElementSibling.value = 7;
 		refs.errorDaysMessage.textContent = 'Введіть період погашення.';
 
-		isDaysValid = false;
+		return false;
 	} else if (days < 7 || days > 60) {
 		refs.daysAmountInput.previousElementSibling.value = 7;
 		refs.errorDaysMessage.textContent = 'Період погашення має бути в межах від 7 до 60 днів.';
 
-		isDaysValid = false;
+		return false;
 	}
 
-	if (!isCreditValid) {
-		refs.dailyRepaymentOutput.value = '';
-		refs.totalRepaymentOutput.value = '';
-		refs.form.lastElementChild.disabled = true;
-
-		return;
-	} else {
-		refs.errorCreditMessage.textContent = '';
-	}
-
-	if (!isDaysValid) {
-		refs.dailyRepaymentOutput.value = '';
-		refs.totalRepaymentOutput.value = '';
-		refs.form.lastElementChild.disabled = true;
-
-		return;
-	} else {
-		refs.errorDaysMessage.textContent = '';
-	}
-
-	dailyRepayment = (credit + credit * (INTEREST_RATE / 100) * days) / days;
-	totalRepayment = dailyRepayment * days;
-
-	refs.form.lastElementChild.disabled = false;
-	refs.dailyRepaymentOutput.value = dailyRepayment.toFixed(2);
-	refs.totalRepaymentOutput.value = totalRepayment.toFixed(2);
+	refs.errorDaysMessage.textContent = '';
+	return true;
 }
 
 function onSubmitBtnClick(e) {
