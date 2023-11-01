@@ -192,6 +192,57 @@ input[type=range]::-moz-range-thumb {
   }
 }
 
+.error-message {
+  position: absolute;
+  color: rgb(208, 57, 57);
+  font-size: 9px;
+}
+@media screen and (min-width: 768px) {
+  .error-message {
+    font-size: 10px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .error-message {
+    font-size: 12px;
+  }
+}
+
+.credit-error {
+  top: 24px;
+  left: 15px;
+}
+@media screen and (min-width: 768px) {
+  .credit-error {
+    top: 22px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .credit-error {
+    top: 20px;
+  }
+}
+
+.days-error {
+  top: 119px;
+  left: 15px;
+}
+@media screen and (min-width: 768px) {
+  .days-error {
+    top: 136px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .days-error {
+    top: 144px;
+  }
+}
+
+.credit-error:not(:empty) + .form__field .credit-input,
+.days-error:not(:empty) + .form__field .days-input {
+  border: 1px solid rgb(208, 57, 57);
+}
+
 .header {
   padding: 16px 0px;
   border-bottom: 2px solid rgb(193, 193, 193);
@@ -246,7 +297,8 @@ input[type=range]::-moz-range-thumb {
 }
 
 .form {
-  padding: 18px 15px;
+  position: relative;
+  padding: 38px 15px;
   margin: 0 auto;
   max-width: 846px;
   border-radius: 4px;
