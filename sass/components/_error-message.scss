@@ -1,0 +1,45 @@
+.error-message {
+	position: absolute;
+
+	color: $error-color;
+	@include font(null, 9px, null, null);
+
+	@include tablet {
+		@include font(null, 10px, null, null);
+	}
+
+	@include desktop {
+		@include font(null, 12px, null, null);
+	}
+}
+
+.credit-error {
+	top: 24px;
+	left: 15px;
+
+	@include tablet {
+		top: 22px;
+	}
+
+	@include desktop {
+		top: 20px;
+	}
+}
+
+.days-error {
+	top: 119px;
+	left: 15px;
+
+	@include tablet {
+		top: 136px;
+	}
+
+	@include desktop {
+		top: 144px;
+	}
+}
+
+.credit-error:not(:empty) + .form__field .credit-input,
+.days-error:not(:empty) + .form__field .days-input {
+	border: 1px solid $error-color;
+}
