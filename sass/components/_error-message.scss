@@ -2,7 +2,7 @@
 	position: absolute;
 
 	color: $error-color;
-	@include font(null, 9px, null, null);
+	@include font(500, 9px, null, null);
 
 	@include tablet {
 		@include font(null, 10px, null, null);
