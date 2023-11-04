@@ -7,7 +7,7 @@
 користувачам обчислити денну та загальну суми погашення позики. Калькулятор розраховує вартість
 погашення на основі введеної суми позики та періоду погашення.
 
-![Design visualization](./assets/image/design.jpeg)
+![Design visualization](./assets/image/design.jpg)
 
 ---
 

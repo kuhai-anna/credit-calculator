@@ -7,7 +7,7 @@ The project is created to implement
 calculate the daily and total repayment amounts of a loan. The calculator computes the repayment
 amount based on the entered loan amount and repayment period.
 
-![Design visualization](./assets/image/design.jpeg)
+![Design visualization](./assets/image/design.jpg)
 
 ---
 
