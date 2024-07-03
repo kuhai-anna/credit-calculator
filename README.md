@@ -1,63 +1,63 @@
-# Кредитний калькулятор
+# Credit Calculator
 
-## Опис проекту
+## Project Description
 
-Проект створений з метою реалізації
-[кредитного калькулятора](https://kuhai-anna.github.io/credit-calculator/), який дозволяє
-користувачам обчислити денну та загальну суми погашення позики. Калькулятор розраховує вартість
-погашення на основі введеної суми позики та періоду погашення.
+The project is created to implement
+[a credit calculator](https://kuhai-anna.github.io/credit-calculator/) that allows users to
+calculate the daily and total repayment amounts of a loan. The calculator computes the repayment
+amount based on the entered loan amount and repayment period.
 
 ![Design visualization](./assets/image/design.jpg)
 
 ---
 
-## Виконані завдання
+## Accomplishments
 
-### Технічні
+### Technical
 
-- Проєкт реалізовано з використанням чистого HTML, SASS та JavaScript (ES6).
-- Виконано адаптивну верстку з трьома точками перелому:
+- The project is implemented using pure HTML, SASS, and JavaScript (ES6).
+- Adaptive layout is done with three breakpoints:
   1. mobile: 375px;
   2. tablet: 768px;
-  3. desctop: 1280px.
-- Здійснено підключення шрифтів за допомогою font-face.
-- Забезпечено оптимізацію розмірів векторної графіки.
-- Додано відображення фавікон сторінки.
+  3. desktop: 1280px.
+- Font connections have been added using font-face.
+- Vector graphics are optimized for size.
+- Favicon display for the page is added.
 
-### Практичні
+### Practical
 
-- Створено HTML-форму з необхідними полями та кнопкою.
-- Кнопка "Отримати кредит" неактивна під час запуску калькулятора і до того, як значення у полях
-  введення не пройшли валідацію.
-- Користувач може вводити суму позики та період погашення як у полі введення, так і за допомогою
-  слайдера (повзунка).
-- Для полів введення встановлені ліміти. Якщо значення не введене або воно знаходиться поза межами
-  лімітів, розрахунок не проводиться, а користувач отримує сповіщення про наявність помилки. Якщо
-  значення валідні, автоматично проводиться розрахунок денної та загальної суми погашення позики
-  згідно наданих формул, а користувач отримує можливість натиснути кнопку "Отримати кредит".
-- Після натискання кнопки з'являється сповіщення про "Успішний запит", а форма автоматично
-  очищується.
+- Created an HTML form with necessary fields and a button.
+- The "Get Credit" button is inactive at the start of the calculator and until the input field
+  values pass validation.
+- The user can input the loan amount and repayment period either in the input field or using the
+  slider.
+- Limits are set for the input fields. If the value is not entered or it falls outside the limits,
+  the calculation is not performed, and the user receives an error message. If the values are valid,
+  the daily and total repayment amounts of the loan are calculated automatically according to the
+  provided formulas, and the user can click the "Get Credit" button.
+- Upon clicking the button, a "Successful Request" notification appears, and the form is
+  automatically cleared.
 
 ---
 
-## Запуск проєкту
+## Running the Project
 
-### Клонування репозиторію:
+### Cloning the Repository:
 
-Склонуйте репозиторій проекту на своєму локальному комп'ютері. Ви можете скористатися командою git
-clone, якщо ви використовуєте систему контролю версій Git.
+Clone the project repository on your local computer. You can use the git clone command if you are
+using the Git version control system.
 
-### Запуск Live Sass Compiler:
+### Running Live Sass Compiler:
 
-Запустіть розширення "Live Sass Compiler" у редакторі VS Code. Це дозволить автоматично компілювати
-файли SASS у CSS під час редагування.
+Launch the "Live Sass Compiler" extension in the VS Code editor. This will automatically compile
+SASS files into CSS during editing.
 
-### Запуск Live Server:
+### Running Live Server:
 
-Запустіть розширення "Live Server" у редакторі VS Code, щоб запустити локальний веб-сервер. Це
-дозволить переглядати та тестувати веб-сторінку на локальному сервері.
+Launch the "Live Server" extension in the VS Code editor to start a local web server. This will
+allow you to view and test the web page on the local server.
 
-### Перегляд результатів:
+### Viewing the Results:
 
-Після запуску локального сервера відкрийте браузер та перейдіть за адресою, яка відображається в
-консолі, для перегляду веб-сторінки у живому режимі.
+After starting the local server, open a browser and navigate to the address displayed in the console
+to view the web page in live mode.
